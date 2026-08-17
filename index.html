@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adigun Francis Folayemi — Web Developer &amp; Full-Stack Engineer</title>
+<meta name="description" content="Adigun Francis Folayemi — WordPress, ASP.NET, and full-stack developer based in Lagos, Nigeria. React, Next.js, Node.js, SQL/MySQL, MERN.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg-deep:#0d0b26;
+    --bg-indigo:#17143f;
+    --bg-indigo-light:#221d57;
+    --gold:#cba135;
+    --gold-bright:#e6c767;
+    --cream:#f3efe3;
+    --muted:#a79fd1;
+    --line:rgba(203,161,53,0.25);
+    --radius:2px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg-deep);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- adire motif (signature element) ---------- */
+  .adire-strip{
+    width:100%;
+    height:28px;
+    display:block;
+    overflow:hidden;
+    opacity:0.9;
+  }
+  .adire-strip svg{width:100%;height:100%;display:block;}
+
+  .adire-bg{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0.16;
+    z-index:0;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(13,11,38,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:72px;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--cream);
+  }
+  .logo span{color:var(--gold);}
+  .navlinks{display:flex;gap:32px;font-size:0.9rem;}
+  .navlinks a{color:var(--muted);transition:color .2s;}
+  .navlinks a:hover, .navlinks a:focus-visible{color:var(--gold-bright);outline:none;}
+  .navlinks a:focus-visible{text-decoration:underline;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:120px 0 96px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{margin-bottom:20px;display:block;}
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.4rem);
+    line-height:1.05;
+    max-width:780px;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-bright);
+  }
+  .hero p.lede{
+    margin-top:24px;
+    max-width:560px;
+    font-size:1.1rem;
+    color:var(--muted);
+  }
+  .hero .ctas{
+    margin-top:40px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    font-family:'Space Mono',monospace;
+    font-size:0.82rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border-radius:var(--radius);
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--bg-deep);
+    border:1px solid var(--gold);
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{
+    background:var(--gold-bright);
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--cream);
+  }
+  .btn-ghost:hover, .btn-ghost:focus-visible{
+    border-color:var(--gold);
+    color:var(--gold-bright);
+    transform:translateY(-2px);
+  }
+  .btn:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
+
+  /* ---------- section shell ---------- */
+  section{padding:88px 0;position:relative;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{margin-bottom:48px;max-width:640px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:14px;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:1.02rem;}
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;}
+  .about-grid p strong{color:var(--cream);font-weight:600;}
+  .stat-block{
+    border:1px solid var(--line);
+    padding:28px;
+    background:var(--bg-indigo);
+  }
+  .stat-block .stat{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .stat-block .stat:last-child{border-bottom:none;}
+  .stat-block .stat .num{
+    font-family:'Fraunces',serif;
+    font-size:1.5rem;
+    color:var(--gold-bright);
+  }
+  .stat-block .stat .label{
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+    text-align:right;
+  }
+
+  /* ---------- skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  .skill-card{
+    border:1px solid var(--line);
+    padding:32px;
+    background:var(--bg-indigo);
+    position:relative;
+  }
+  .skill-card h3{
+    font-size:1.2rem;
+    color:var(--gold-bright);
+    margin-bottom:6px;
+  }
+  .skill-card .sub{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:20px;
+    display:block;
+  }
+  .tag-list{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{
+    font-family:'Space Mono',monospace;
+    font-size:0.78rem;
+    padding:7px 12px;
+    border:1px solid var(--line);
+    color:var(--cream);
+    border-radius:var(--radius);
+  }
+
+  /* ---------- projects ---------- */
+  .project{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:40px;
+    padding:40px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{border-bottom:none;}
+  .project .meta{
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .project .meta .role{color:var(--gold);display:block;margin-top:10px;}
+  .project h3{font-size:1.5rem;color:var(--cream);margin-bottom:12px;}
+  .project .challenge-label{
+    font-family:'Space Mono',monospace;
+    font-size:0.7rem;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    display:block;
+    margin:16px 0 6px;
+  }
+  .project p{color:var(--muted);}
+  .project .tag-list{margin-top:20px;}
+  .project .placeholder{
+    color:var(--gold-bright);
+    font-style:italic;
+  }
+  .project-links{margin-top:20px;display:flex;gap:20px;font-size:0.88rem;}
+  .project-links a{color:var(--gold-bright);border-bottom:1px solid var(--gold);}
+  .project-links a:hover, .project-links a:focus-visible{color:var(--cream);}
+
+  @media (max-width:720px){
+    .project{grid-template-columns:1fr;gap:16px;}
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- contact ---------- */
+  .contact-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:40px;
+  }
+  .contact-inner h2{font-size:clamp(1.9rem,4vw,3rem);max-width:520px;}
+  .contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    font-family:'Space Mono',monospace;
+    font-size:0.92rem;
+  }
+  .contact-links a{
+    display:flex;
+    justify-content:space-between;
+    gap:32px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+    color:var(--cream);
+    transition:color .2s;
+    min-width:280px;
+  }
+  .contact-links a:hover, .contact-links a:focus-visible{color:var(--gold-bright);}
+  .contact-links a .arrow{color:var(--gold);}
+
+  footer{
+    padding:32px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:0.82rem;
+    font-family:'Space Mono',monospace;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">francis<span>.</span></div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="adire-bg" aria-hidden="true">
+    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="adireDots" width="80" height="80" patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="26" fill="none" stroke="#cba135" stroke-width="1"/>
+          <circle cx="40" cy="40" r="14" fill="none" stroke="#cba135" stroke-width="1"/>
+          <circle cx="0" cy="0" r="10" fill="none" stroke="#cba135" stroke-width="0.6"/>
+          <circle cx="80" cy="80" r="10" fill="none" stroke="#cba135" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="400" fill="url(#adireDots)"/>
+    </svg>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1;">
+    <span class="eyebrow">Lagos, Nigeria — Web Developer &amp; Consultant</span>
+    <h1>Building brands in <em>WordPress</em>,<br>and systems in <em>code</em>.</h1>
+    <p class="lede">I move between three worlds: crafting WordPress sites that give small businesses a credible digital presence, building structured applications on ASP.NET, and shipping full-stack products with React, Next.js, Node.js, and SQL. Based in Lagos, working with clients wherever they are.</p>
+    <div class="ctas">
+      <a href="#work" class="btn btn-primary">View my work</a>
+      <a href="#" class="btn btn-ghost">↓ Download CV <span style="opacity:.6">(add link)</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="adire-strip" aria-hidden="true">
+  <svg viewBox="0 0 400 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="14" x2="400" y2="14" stroke="#cba135" stroke-width="1" opacity="0.4"/>
+    <g fill="none" stroke="#cba135" stroke-width="1">
+      <circle cx="20" cy="14" r="6"/><circle cx="60" cy="14" r="6"/><circle cx="100" cy="14" r="6"/>
+      <circle cx="140" cy="14" r="6"/><circle cx="180" cy="14" r="6"/><circle cx="220" cy="14" r="6"/>
+      <circle cx="260" cy="14" r="6"/><circle cx="300" cy="14" r="6"/><circle cx="340" cy="14" r="6"/>
+      <circle cx="380" cy="14" r="6"/>
+    </g>
+  </svg>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 style="margin-top:14px;">Two disciplines, one goal: build things that work for the people who use them.</h2>
+      <p style="margin-top:24px;">I'm <strong>Adigun Francis Folayemi</strong>, a web developer and consultant based in Lagos. My work spans <strong>WordPress/CMS development</strong> for brands and small businesses who need a credible, manageable web presence, <strong>ASP.NET</strong> for structured application builds, and <strong>full-stack engineering</strong> (React, Next.js, Node.js, SQL/MySQL, the MERN stack) for product-style work like tracking and dispatch systems.</p>
+      <p>That range means I can scope a project realistically — knowing when a client needs a lean WordPress build versus a custom application — rather than defaulting to whichever stack I'm more comfortable in.</p>
+    </div>
+    <div class="stat-block">
+      <div class="stat"><span class="label">Based in</span><span class="num" style="font-size:1.1rem;">Lagos, NG</span></div>
+      <div class="stat"><span class="label">Focus areas</span><span class="num" style="font-size:1.1rem;">WordPress · MERN</span></div>
+      <div class="stat"><span class="label">Client projects</span><span class="num">2+</span></div>
+      <div class="stat"><span class="label">Available for</span><span class="num" style="font-size:1.1rem;">Full-time · Contract</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Skills</span>
+      <h2>What I build with</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>WordPress &amp; CMS</h3>
+        <span class="sub">Client sites &amp; brand builds</span>
+        <div class="tag-list">
+          <span class="tag">WordPress</span>
+          <span class="tag">Custom Themes</span>
+          <span class="tag">WooCommerce</span>
+          <span class="tag">PHP</span>
+          <span class="tag">Elementor</span>
+          <span class="tag">SEO Basics</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Full-Stack Engineering</h3>
+        <span class="sub">Applications &amp; products</span>
+        <div class="tag-list">
+          <span class="tag">React</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">ASP.NET</span>
+          <span class="tag">SQL / MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">MERN Stack</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Case studies &amp; projects</h2>
+      <p>A mix of client consulting work and full-stack builds.</p>
+    </div>
+
+    <div class="project">
+      <div class="meta">
+        Client Project<br>2025
+        <span class="role">WordPress · Consulting</span>
+      </div>
+      <div>
+        <h3>Erine's Herbs &amp; Spices</h3>
+        <span class="challenge-label">The Challenge</span>
+        <p>A natural wellness brand needed a digital presence credible enough to match their in-person offerings — including sensitive women's health programs — without feeling clinical.</p>
+        <span class="challenge-label">My Role</span>
+        <p>Web developer and consultant. I handled the technical build and the strategic call on whether to launch as a brand site, e-commerce store, or combined solution, based on the client's sales readiness rather than defaulting to the biggest build.</p>
+        <span class="challenge-label">Outcome</span>
+        <p class="placeholder">[Add a real result: traffic increase, program sign-ups, load time, or client feedback.]</p>
+        <div class="tag-list">
+          <span class="tag">WordPress</span>
+          <span class="tag">WooCommerce</span>
+          <span class="tag">Brand Strategy</span>
+        </div>
+        <div class="project-links">
+          <a href="https://erinesherbsandspices.com" target="_blank" rel="noopener">Live site ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="meta">
+        Client Project<br>2025
+        <span class="role">WordPress</span>
+      </div>
+      <div>
+        <h3>Lara Kudayisi International</h3>
+        <span class="challenge-label">The Challenge</span>
+        <p>A personal coaching and speaking brand needed a site that converts visitors into bookings and leads while carrying a strong individual voice.</p>
+        <span class="challenge-label">My Role</span>
+        <p class="placeholder">[Fill in what you actually built — custom theme, booking integration, speaker media kit, blog setup, etc.]</p>
+        <span class="challenge-label">Outcome</span>
+        <p class="placeholder">[Add a real result or client feedback.]</p>
+        <div class="tag-list">
+          <span class="tag">WordPress</span>
+          <span class="tag">Custom Theme</span>
+        </div>
+        <div class="project-links">
+          <a href="https://larakudayisiinternational.com" target="_blank" rel="noopener">Live site ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="meta">
+        Client Project<br>2025-2026
+        <span class="role">ASP.NET · Full-Stack</span>
+      </div>
+      <div>
+        <h3>Ocord</h3>
+        <span class="challenge-label">The Challenge</span>
+        <p>A logistics company needed a way to manage bookings and give customers visibility into their shipments in real time, rather than relying on manual coordination.</p>
+        <span class="challenge-label">What I Built</span>
+        <p>A tracking and booking dispatch system — allowing customers to book shipments and track status, while giving the logistics team a central system to manage dispatch.</p>
+        <span class="challenge-label">Outcome</span>
+        <p class="placeholder">[Add a real result — faster dispatch turnaround, reduced manual coordination, customer feedback.]</p>
+        <div class="tag-list">
+          <span class="tag">ASP.NET</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Logistics</span>
+        </div>
+        <div class="project-links">
+          <a href="https://ocord.net" target="_blank" rel="noopener">Live site ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="adire-strip" aria-hidden="true">
+  <svg viewBox="0 0 400 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="14" x2="400" y2="14" stroke="#cba135" stroke-width="1" opacity="0.4"/>
+    <g fill="none" stroke="#cba135" stroke-width="1">
+      <circle cx="20" cy="14" r="6"/><circle cx="60" cy="14" r="6"/><circle cx="100" cy="14" r="6"/>
+      <circle cx="140" cy="14" r="6"/><circle cx="180" cy="14" r="6"/><circle cx="220" cy="14" r="6"/>
+      <circle cx="260" cy="14" r="6"/><circle cx="300" cy="14" r="6"/><circle cx="340" cy="14" r="6"/>
+      <circle cx="380" cy="14" r="6"/>
+    </g>
+  </svg>
+</div>
+
+<section id="contact">
+  <div class="wrap contact-inner">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's build something that actually works for your business.</h2>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:francis.folayemi@gmail.com">Email <span class="arrow">→</span></a>
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn <span class="arrow">→</span></a>
+      <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Adigun Francis Folayemi. Built with HTML, CSS &amp; a little adire.</div>
+</footer>
+
+</body>
+</html>
