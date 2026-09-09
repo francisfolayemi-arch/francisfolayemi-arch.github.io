@@ -28,11 +28,13 @@ A single-page portfolio covering:
 
 ## Still to update
 
-- [ ] Contact links: GitHub, LinkedIn, WhatsApp
-- [ ] CV download link
-- [ ] Lara Kudayisi International — role/build details and outcome
-- [ ] Ocord — outcome metric (e.g. dispatch turnaround, adoption)
-- [ ] Erine's Herbs & Spices — outcome metric
+- [ ] Contact links: [GitHub](https://github.com/francisfolayemi-arch), [LinkedIn](https://linkedin.com/in/folayemi-adigun), [WhatsApp](https://wa.me/2349068611799)
+- [ ] CV download link [Download CV](Adigun_Francis_CV.pdf)
+- [ ] Lara Kudayisi International — Designed and built the WordPress site for Lara Kudayisi International, a personal coaching and speaking brand — covering site structure, visual branding, and content presentation to support the founder's speaking and coaching offerings.
+
+- [ ] Ocord — Architected and built a logistics dispatch and tracking platform on C#/ASP.NET MVC with a SQL Server backend, including the shipment status data model, deployed to cloud hosting.
+
+- [ ] Erine's Herbs & Spices — Scoped and built the e-commerce and brand website infrastructure for Erine's Herbs & Spices, a natural wellness brand — including contributions to branding (slogan development) and site planning for their wellness program lines (Sacred Womb Healing, Fibroid Care, Reproductive Health).
 
 ## Tech
 
