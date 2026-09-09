@@ -1,39 +1,60 @@
-# Adigun Francis Folayemi — Portfolio
+# DockerDemo — ASP.NET Core + SQL Server, containerized
 
-Personal portfolio site for **Adigun Francis Folayemi**, Web Developer & Consultant based in Lagos, Nigeria.
+A minimal, working example to practice Docker fundamentals on your own stack
+(C# / ASP.NET / SQL Server) before a technical interview.
 
-🔗 **Live site:** https://yourusername.github.io *(update after deploying)*
+## What's in here
 
-## What's inside
+- `Dockerfile` — multi-stage build: compiles the app in an SDK image, then
+  copies just the published output into a smaller runtime image.
+- `docker-compose.yml` — runs the web app *and* a SQL Server container
+  together, networked so they can talk to each other by service name.
+- `Program.cs` / `DockerDemo.csproj` — a tiny ASP.NET Core app with two
+  endpoints: `/` (proves the container is running) and `/db-check` (proves
+  it can reach the SQL Server container).
 
-A single-page portfolio covering:
-- **WordPress / CMS** development for client brand and e-commerce sites
-- **ASP.NET** development for structured applications
-- **Full-stack** engineering with React, Next.js, Node.js, SQL/MySQL, and the MERN stack
+## Prerequisites
 
-## Featured projects
+Install Docker Desktop, then confirm it works:
 
-| Project | Type | Link |
-|---|---|---|
-| Erine's Herbs & Spices | WordPress | [erinesherbsandspices.com](https://erinesherbsandspices.com) |
-| Lara Kudayisi International | WordPress | [larakudayisiinternational.com](https://larakudayisiinternational.com) |
-| Ocord | ASP.NET / Full-Stack — tracking & booking dispatch system | [ocord.net](https://ocord.net) |
+```bash
+docker run hello-world
+```
 
-## Deploying on GitHub Pages
+## Run it
 
-1. Create a repo named `yourusername.github.io` (use your exact GitHub username).
-2. Upload `index.html` to the repo root.
-3. Go to **Settings → Pages**, set source to `Deploy from branch`, branch `main`, folder `/ (root)`.
-4. Your site goes live at `https://yourusername.github.io` within a minute or two.
+From this folder:
 
-## Still to update
+```bash
+docker compose up --build
+```
 
-- [ ] Contact links: GitHub, LinkedIn, WhatsApp
-- [ ] CV download link
-- [ ] Lara Kudayisi International — role/build details and outcome
-- [ ] Ocord — outcome metric (e.g. dispatch turnaround, adoption)
-- [ ] Erine's Herbs & Spices — outcome metric
+This does three things worth understanding, in order:
+1. Builds the `webapp` image from the `Dockerfile`.
+2. Pulls the official SQL Server image (first run only — cached after that).
+3. Starts both containers on a shared network Docker creates automatically.
 
-## Tech
+Once it's running, open:
+- http://localhost:8080/ — should say the app is running.
+- http://localhost:8080/db-check — should return the SQL Server version,
+  proving the two containers connected successfully.
 
-Plain HTML/CSS/JS — no build step, no dependencies. Fonts loaded from Google Fonts (Fraunces, Inter, Space Mono).
+Stop everything with `Ctrl+C`, then `docker compose down` to remove the
+containers (add `-v` to also delete the SQL Server data volume).
+
+## Useful commands to practice while this is running
+
+```bash
+docker ps                     # see both containers running
+docker logs <container-id>    # view a container's output/logs
+docker exec -it <container-id> bash   # get a shell inside a running container
+docker images                 # see the images you've built/pulled
+```
+
+## Why this setup, specifically
+
+This mirrors a realistic version of what a C#/.NET + SQL Server engineer
+would actually containerize day to day — not a toy "hello world" — so you
+have a concrete, honest story for an interview: "I built a multi-stage
+Dockerfile for an ASP.NET app and wired it to a SQL Server container with
+docker-compose."

@@ -1,0 +1,25 @@
+services:
+  webapp:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # The app reads this env var to know how to reach the sqlserver service.
+      # Note the host is "sqlserver" — that's the service name below, which
+      # Docker's internal DNS resolves automatically. No IP addresses needed.
+      - SQLSERVER_CONNECTION=Server=sqlserver,1433;Database=master;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong!Passw0rd
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+volumes:
+  sqlserver-data:
