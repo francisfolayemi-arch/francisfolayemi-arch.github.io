@@ -1,60 +1,29 @@
-# DockerDemo — ASP.NET Core + SQL Server, containerized
+# Francisfolayemi-arch.github.io
 
-A minimal, working example to practice Docker fundamentals on your own stack
-(C# / ASP.NET / SQL Server) before a technical interview.
+Personal portfolio for **Adigun Francis Folayemi**.
 
-## What's in here
+## GitHub Pages setup
 
-- `Dockerfile` — multi-stage build: compiles the app in an SDK image, then
-  copies just the published output into a smaller runtime image.
-- `docker-compose.yml` — runs the web app *and* a SQL Server container
-  together, networked so they can talk to each other by service name.
-- `Program.cs` / `DockerDemo.csproj` — a tiny ASP.NET Core app with two
-  endpoints: `/` (proves the container is running) and `/db-check` (proves
-  it can reach the SQL Server container).
+This repository is a static HTML/CSS site. It does not require .NET, Docker, SQL Server, or a build process.
 
-## Prerequisites
+1. Repository name should be exactly `francisfolayemi-arch.github.io`.
+2. Keep `index.html` in the repository root.
+3. In **Settings → Pages**, choose **Deploy from a branch**.
+4. Select the `main` branch and `/ (root)`.
+5. Save and wait for the Pages deployment to complete.
 
-Install Docker Desktop, then confirm it works:
+The site uses only `index.html`, so there is no framework build step.
 
-```bash
-docker run hello-world
-```
+## Local preview
 
-## Run it
-
-From this folder:
+Open `index.html` directly in a browser, or run a simple local server:
 
 ```bash
-docker compose up --build
+python -m http.server 8000
 ```
 
-This does three things worth understanding, in order:
-1. Builds the `webapp` image from the `Dockerfile`.
-2. Pulls the official SQL Server image (first run only — cached after that).
-3. Starts both containers on a shared network Docker creates automatically.
+Then visit `http://localhost:8000`.
 
-Once it's running, open:
-- http://localhost:8080/ — should say the app is running.
-- http://localhost:8080/db-check — should return the SQL Server version,
-  proving the two containers connected successfully.
+## Notes
 
-Stop everything with `Ctrl+C`, then `docker compose down` to remove the
-containers (add `-v` to also delete the SQL Server data volume).
-
-## Useful commands to practice while this is running
-
-```bash
-docker ps                     # see both containers running
-docker logs <container-id>    # view a container's output/logs
-docker exec -it <container-id> bash   # get a shell inside a running container
-docker images                 # see the images you've built/pulled
-```
-
-## Why this setup, specifically
-
-This mirrors a realistic version of what a C#/.NET + SQL Server engineer
-would actually containerize day to day — not a toy "hello world" — so you
-have a concrete, honest story for an interview: "I built a multi-stage
-Dockerfile for an ASP.NET app and wired it to a SQL Server container with
-docker-compose."
+The portfolio content is based on the supplied professional CV. Technologies and experience not evidenced in the CV were removed from the original site to keep the portfolio accurate.
