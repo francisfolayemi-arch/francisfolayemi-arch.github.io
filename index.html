@@ -3,148 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adigun Francis Folayemi — Full-Stack Software Engineer, web developer and technology professional.">
   <title>Adigun Francis Folayemi | Full-Stack Software Engineer</title>
-  <meta name="description" content="Portfolio of Adigun Francis Folayemi, a Lagos-based IT professional and full-stack software engineer with 10+ years of experience in C#, ASP.NET, SQL Server, web engineering and cloud deployment.">
-  <meta name="author" content="Adigun Francis Folayemi">
-  <meta property="og:title" content="Adigun Francis Folayemi | Full-Stack Software Engineer">
-  <meta property="og:description" content="Software development, web engineering, IT leadership and client-focused technology delivery.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0b1020">
   <style>
-    :root{--bg:#0b1020;--panel:#121a2d;--panel2:#17213a;--text:#eef3ff;--muted:#a9b4ca;--accent:#63e6be;--accent2:#74c0fc;--line:#263451;--max:1120px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--max);margin:auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}
-    .links{display:flex;gap:24px;color:var(--muted);font-size:.94rem}.links a{padding:8px 0}
-    .hero{padding:105px 0 90px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(116,192,252,.12),transparent 35%),radial-gradient(circle at 10% 30%,rgba(99,230,190,.08),transparent 30%)}
-    .eyebrow{color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:1.02;letter-spacing:-.055em;max-width:900px;margin:18px 0}
-    .hero h1 em{font-style:normal;color:var(--accent)}.lead{max-width:750px;color:var(--muted);font-size:1.15rem}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;padding:12px 18px;border:1px solid var(--line);border-radius:8px;font-weight:750}.primary{background:var(--accent);color:#06110e;border-color:var(--accent)}.primary:hover{color:#06110e;background:#8af0cf}.ghost:hover{border-color:var(--accent)}
-    section{padding:82px 0;border-bottom:1px solid var(--line)}.section-title{font-size:2.2rem;letter-spacing:-.04em;margin:8px 0 34px}.grid2{display:grid;grid-template-columns:1.4fr .8fr;gap:55px}
-    .copy{color:var(--muted)}.copy strong{color:var(--text)}.facts{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 22px}.fact{padding:18px 0;border-bottom:1px solid var(--line)}.fact:last-child{border:0}.fact b{display:block;color:var(--accent);font-size:1.35rem}.fact span{color:var(--muted);font-size:.9rem}
-    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:25px}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.tag{font-size:.8rem;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-    .project{display:grid;grid-template-columns:180px 1fr;gap:35px;padding:34px 0;border-top:1px solid var(--line)}.project:first-of-type{border-top:0}.project-meta{color:var(--accent2);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.project h3{font-size:1.55rem;margin:0 0 8px}.project p{color:var(--muted);margin:8px 0}.project a.link{display:inline-block;margin-top:12px;color:var(--accent);font-weight:700}
-    .timeline{border-left:1px solid var(--line);margin-left:6px;padding-left:28px}.job{position:relative;margin:0 0 34px}.job:before{content:"";position:absolute;left:-34px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent)}.job h3{margin:0}.job .date{color:var(--accent2);font-size:.86rem;font-weight:700}.job ul{margin:10px 0 0;padding-left:20px;color:var(--muted)}
-    .contact{display:flex;align-items:end;justify-content:space-between;gap:35px}.contact h2{font-size:clamp(2rem,4vw,3.3rem);max-width:650px;line-height:1.08;letter-spacing:-.045em}.contact-list{display:grid;gap:10px;color:var(--muted);min-width:290px}.contact-list a{border-bottom:1px solid var(--line);padding:8px 0}
-    footer{padding:28px 0;color:var(--muted);font-size:.85rem}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){.grid2,.skills{grid-template-columns:1fr 1fr}.contact{align-items:start;flex-direction:column}.project{grid-template-columns:1fr;gap:8px}}
-    @media(max-width:600px){.links{display:none}.hero{padding:78px 0 65px}.grid2,.skills{grid-template-columns:1fr}.wrap{padding:0 18px}.section-title{font-size:1.9rem}}
+    :root{--bg:#07111f;--panel:#0d1a2b;--text:#edf4ff;--muted:#9eb0c7;--line:#1e3047;--accent:#63a8ff;--accent2:#8dd8c2;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,#07111f 0%,#081522 55%,#07111f 100%);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit} .wrap{width:min(92%,var(--max));margin:auto}
+    nav{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav .inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+    .brand{font-weight:800;text-decoration:none}.brand span{color:var(--accent)}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{text-decoration:none;color:var(--muted);font-size:.94rem}nav a:hover{color:var(--text)}
+    header{padding:100px 0 72px}.eyebrow{color:var(--accent2);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;max-width:850px;margin:16px 0}.lead{max-width:760px;color:var(--muted);font-size:1.14rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid var(--line)}
+    .btn.primary{background:var(--accent);color:#04101e;border-color:var(--accent)}.btn.secondary{color:var(--text)}
+    section{padding:72px 0;border-top:1px solid var(--line)}h2{font-size:2rem;margin:0 0 8px} .section-intro{color:var(--muted);margin:0 0 28px}
+    .stats,.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,1fr)}
+    .card{background:rgba(13,26,43,.82);border:1px solid var(--line);border-radius:16px;padding:24px}.card h3{margin:4px 0 8px;font-size:1.3rem}
+    .stat strong{display:block;font-size:1.6rem}.muted{color:var(--muted)}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.tag{font-size:.78rem;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#bfd0e5}
+    .project{display:flex;flex-direction:column}.project .spacer{flex:1}.project a{color:var(--accent);text-decoration:none;font-weight:700}
+    .project.featured{border-color:#2e5277;background:linear-gradient(145deg,rgba(15,35,57,.96),rgba(10,23,39,.94))}
+    .timeline{display:grid;gap:18px}.role{border-left:2px solid #29445f;padding-left:20px}.role h3{margin:0}.role .date{color:var(--accent2);font-size:.9rem}
+    footer{padding:36px 0;color:var(--muted);text-align:center}
+    @media(max-width:800px){nav ul{display:none}.stats,.grid{grid-template-columns:1fr 1fr}header{padding-top:72px}}
+    @media(max-width:560px){.stats,.grid{grid-template-columns:1fr}h1{font-size:2.7rem}}
   </style>
 </head>
 <body>
-<header>
-  <nav class="wrap">
-    <a class="brand" href="#">francis<span>.</span></a>
-    <div class="links" aria-label="Primary navigation">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+<nav><div class="wrap inner">
+  <a class="brand" href="#top">francis<span>.</span></a>
+  <ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Lagos, Nigeria · Full-Stack Software Engineer</span>
-    <h1>Building <em>reliable software</em> from idea to production.</h1>
-    <p class="lead">I’m Adigun Francis Folayemi, an IT professional with 10+ years of experience across software development, web engineering, IT leadership and client-focused technology delivery. My core engineering background is C#, ASP.NET, SQL Server, JavaScript and cloud-hosted applications.</p>
-    <div class="actions">
-      <a class="btn primary" href="#work">View selected work</a>
-      <a class="btn ghost" href="mailto:francis.folayemi@gmail.com">Contact me</a>
-      <a class="btn ghost" href="https://github.com/francisfolayemi-arch" target="_blank" rel="noopener">GitHub ↗</a>
-    </div>
+<main id="top">
+<header><div class="wrap">
+  <div class="eyebrow">Lagos, Nigeria · Full-Stack Software Engineer</div>
+  <h1>Building reliable software from idea to production.</h1>
+  <p class="lead">I’m Adigun Francis Folayemi, an IT professional with 10+ years of experience across software development, web engineering, IT leadership and client-focused technology delivery. My core engineering background is C#, ASP.NET, SQL Server, JavaScript and cloud-hosted applications.</p>
+  <div class="actions"><a class="btn primary" href="#projects">View selected work</a><a class="btn secondary" href="mailto:francis.folayemi@gmail.com">Contact me</a><a class="btn secondary" href="https://github.com/francisfolayemi-arch">GitHub ↗</a></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <h2>Engineering with a business mindset.</h2>
+  <p class="section-intro">I combine hands-on technical delivery with experience translating client requirements into practical technology solutions.</p>
+  <div class="stats">
+    <div class="card stat"><strong>10+ years</strong><span class="muted">Professional IT & software experience</span></div>
+    <div class="card stat"><strong>C# / ASP.NET</strong><span class="muted">Application-development background</span></div>
+    <div class="card stat"><strong>SQL Server</strong><span class="muted">Relational database experience</span></div>
+    <div class="card stat"><strong>Azure / AWS</strong><span class="muted">Cloud-hosted deployment experience</span></div>
   </div>
-</section>
+</div></section>
 
-<section id="about">
-  <div class="wrap grid2">
-    <div>
-      <span class="eyebrow">About</span>
-      <h2 class="section-title">Engineering with a business mindset.</h2>
-      <div class="copy">
-        <p>I combine hands-on technical delivery with experience translating client requirements into practical technology solutions. I have led software functions end-to-end, from requirements gathering and architecture through development, testing and production deployment.</p>
-        <p>My background includes building web applications, maintaining live client sites, designing responsive interfaces, leading small technical teams and working directly with stakeholders. I also bring experience in consulting and technology sales, which helps me connect engineering decisions to business outcomes.</p>
-      </div>
-    </div>
-    <div class="facts">
-      <div class="fact"><b>10+ years</b><span>Professional IT & software experience</span></div>
-      <div class="fact"><b>C# / ASP.NET</b><span>Core application-development background</span></div>
-      <div class="fact"><b>SQL Server</b><span>Relational database experience</span></div>
-      <div class="fact"><b>Azure / AWS</b><span>Cloud-hosted deployment experience</span></div>
-    </div>
+<section id="skills"><div class="wrap">
+  <h2>What I work with</h2><p class="section-intro">A practical toolkit spanning application development, web engineering, data and cloud delivery.</p>
+  <div class="grid">
+    <div class="card"><h3>Backend & Applications</h3><p class="muted">Structured application development and backend logic.</p><div class="tags"><span class="tag">C#</span><span class="tag">ASP.NET</span><span class="tag">MVC</span><span class="tag">.NET Framework</span><span class="tag">SQL Server</span></div></div>
+    <div class="card"><h3>Web Engineering</h3><p class="muted">Responsive interfaces, web delivery and ongoing maintenance.</p><div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">WordPress</span><span class="tag">PHP</span></div></div>
+    <div class="card"><h3>Cloud & Data</h3><p class="muted">Deployment, infrastructure awareness and analytics.</p><div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Linux</span><span class="tag">Power BI</span><span class="tag">Oracle DBA</span></div></div>
+    <div class="card"><h3>Delivery & Leadership</h3><p class="muted">Requirements, architecture, testing, stakeholder communication and technical oversight.</p><div class="tags"><span class="tag">Architecture</span><span class="tag">Code Review</span><span class="tag">Testing</span><span class="tag">UI/UX</span></div></div>
   </div>
-</section>
+</div></section>
 
-<section id="skills">
-  <div class="wrap">
-    <span class="eyebrow">Technical toolkit</span>
-    <h2 class="section-title">What I work with</h2>
-    <div class="skills">
-      <article class="card"><h3>Backend & Applications</h3><p>Structured application development and backend logic.</p><div class="tags"><span class="tag">C#</span><span class="tag">ASP.NET MVC</span><span class="tag">.NET Framework</span><span class="tag">SQL Server</span></div></article>
-      <article class="card"><h3>Web Engineering</h3><p>Responsive interfaces, web delivery and ongoing maintenance.</p><div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">WordPress</span><span class="tag">PHP</span></div></article>
-      <article class="card"><h3>Cloud & Data</h3><p>Deployment, infrastructure awareness and analytics.</p><div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Linux</span><span class="tag">Power BI</span><span class="tag">Oracle DBA</span></div></article>
-    </div>
+<section id="projects"><div class="wrap">
+  <h2>Projects that demonstrate real delivery</h2><p class="section-intro">Selected software, web and client-delivery work.</p>
+  <div class="grid">
+    <article class="card project"><div><div class="eyebrow">Logistics</div><div class="tags"><span class="tag">ASP.NET</span><span class="tag">SQL</span></div><h3>OCORD.NET</h3><p class="muted">Architected and built a logistics management platform using C#/ASP.NET MVC with a SQL Server backend and jQuery-driven front end. The system was deployed to cloud hosting.</p><p class="muted">My role included requirements gathering, architecture, development, testing and production deployment, alongside technical decisions and code-quality reviews.</p></div><div class="spacer"></div><a href="https://ocord.net" target="_blank" rel="noopener">Visit project ↗</a></article>
+
+    <article class="card project featured"><div><div class="eyebrow">Security Technology · Client Website</div><div class="tags"><span class="tag">Web Development</span><span class="tag">Responsive UI</span><span class="tag">Security Technology</span></div><h3>Tracatronic Security Website</h3><p class="muted">Worked on the web presence for Tracatronic Security Limited, a Nigerian security-technology business covering fleet management, GPS/GSM/GPRS vehicle and asset tracking, CCTV/IP surveillance, access control, electrical fencing, video door phones and communication systems.</p><p class="muted"><strong>Work delivered:</strong> responsive web development, client-facing service and product presentation, structured content, user-focused interface work and ongoing website/technical support.</p></div><div class="spacer"></div><a href="https://www.tracatronic.net/" target="_blank" rel="noopener">Visit Tracatronic ↗</a></article>
+
+    <article class="card project"><div><div class="eyebrow">E-commerce</div><div class="tags"><span class="tag">ASP.NET</span><span class="tag">HTML5</span><span class="tag">CSS3</span></div><h3>Responsive E-commerce Application</h3><p class="muted">Built a responsive e-commerce web application for a security-services client, covering product catalogue functionality, front-end UI and back-end functionality.</p></div></article>
+
+    <article class="card project"><div><div class="eyebrow">Web & UX</div><div class="tags"><span class="tag">WordPress</span><span class="tag">UI/UX</span></div><h3>Non-profit Website Modernisation</h3><p class="muted">Led the redesign and modernization of a non-profit organisation’s WordPress site, improving usability and visual identity.</p></div></article>
+
+    <article class="card project"><div><div class="eyebrow">Client Delivery</div><div class="tags"><span class="tag">Full Stack</span><span class="tag">Web</span></div><h3>Relationship & Therapy Services Website</h3><p class="muted">Delivered a full-stack website with custom front-end design and back-end logic for a relationship and therapy-services business.</p></div></article>
+
+    <article class="card project"><div><div class="eyebrow">Web Projects</div><div class="tags"><span class="tag">Portfolio</span><span class="tag">Client Websites</span></div><h3>Client Web Portfolio</h3><p class="muted">Selected client websites include Erine’s Herbs & Spices and Lara Kudayisi International.</p><p><a href="https://erinesherbsandspices.com" target="_blank" rel="noopener">Erine’s Herbs & Spices ↗</a><br><a href="https://larakudayisiinternational.com" target="_blank" rel="noopener">Lara Kudayisi International ↗</a></p></div></article>
   </div>
-</section>
+</div></section>
 
-<section id="work">
-  <div class="wrap">
-    <span class="eyebrow">Selected work</span>
-    <h2 class="section-title">Projects that demonstrate real delivery</h2>
-
-    <article class="project">
-      <div class="project-meta">Logistics<br>ASP.NET · SQL</div>
-      <div><h3>OCORD.NET</h3><p>Architected and built a logistics management platform using C#/ASP.NET MVC with a SQL Server backend and jQuery-driven front end. The system was deployed to cloud hosting.</p><p><strong>My role:</strong> owned requirements gathering, architecture, development, testing and production deployment, while also directing technical decisions and reviewing code for quality.</p><a class="link" href="https://ocord.net" target="_blank" rel="noopener">Visit project ↗</a></div>
-    </article>
-
-    <article class="project">
-      <div class="project-meta">E-commerce<br>ASP.NET · Web</div>
-      <div><h3>Responsive E-commerce Application</h3><p>Built a responsive e-commerce web application for a security-services client, covering product catalogue functionality, front-end UI and back-end functionality.</p><div class="tags"><span class="tag">ASP.NET</span><span class="tag">HTML5</span><span class="tag">CSS3</span></div></div>
-    </article>
-
-    <article class="project">
-      <div class="project-meta">Web & UX<br>WordPress</div>
-      <div><h3>Non-profit Website Modernisation</h3><p>Led the redesign and modernization of a non-profit organisation’s WordPress site, improving usability and visual identity.</p><div class="tags"><span class="tag">WordPress</span><span class="tag">UI/UX</span><span class="tag">Web Design</span></div></div>
-    </article>
-
-    <article class="project">
-      <div class="project-meta">Client Delivery<br>Full Stack</div>
-      <div><h3>Relationship & Therapy Services Website</h3><p>Delivered a full-stack website with custom front-end design and back-end logic for a relationship and therapy-services business.</p></div>
-    </article>
-
-    <article class="project">
-      <div class="project-meta">Web Projects<br>Portfolio</div>
-      <div><h3>Client Web Portfolio</h3><p>Selected client websites include Erine’s Herbs & Spices and Lara Kudayisi International.</p><a class="link" href="https://erinesherbsandspices.com" target="_blank" rel="noopener">Erine’s Herbs & Spices ↗</a><br><a class="link" href="https://larakudayisiinternational.com" target="_blank" rel="noopener">Lara Kudayisi International ↗</a></div>
-    </article>
+<section id="experience"><div class="wrap">
+  <h2>A decade across technology and delivery</h2>
+  <div class="timeline">
+    <div class="role"><div class="date">March 2026 – Present</div><h3>Sales Partner — Flowmingo</h3><p class="muted">Promote and sell AI-powered solutions through client outreach and partner channels; build a pipeline for AI solution adoption through product knowledge and value-proposition communication.</p></div>
+    <div class="role"><div class="date">February 2022 – Present</div><h3>Co-Founder & Administrative Director — Franciseth Nigeria Limited</h3><p class="muted">Deliver web applications and digital projects across e-commerce, WordPress and full-stack builds; collaborate with distributed teams and translate client requirements into practical technical delivery.</p></div>
+    <div class="role"><div class="date">August 2017 – January 2022</div><h3>Technical Officer — Latonic Global Resources Limited</h3><p class="muted">Translated requirements into wireframes, mockups and responsive front-end implementations; handled website maintenance, debugging, bug fixes and ongoing feature delivery.</p></div>
+    <div class="role"><div class="date">2016 – 2017</div><h3>Head of IT & Software Development — OSIL</h3><p class="muted">Architected and built OCORD.NET and led the software engineering lifecycle end-to-end; directed technical decisions, infrastructure planning and code-quality reviews for a small development team.</p></div>
   </div>
-</section>
+</div></section>
 
-<section id="experience">
-  <div class="wrap">
-    <span class="eyebrow">Experience</span>
-    <h2 class="section-title">A decade across technology and delivery</h2>
-    <div class="timeline">
-      <article class="job"><h3>Sales Partner — Flowmingo</h3><div class="date">March 2026 – Present</div><ul><li>Promote and sell AI-powered solutions through client outreach and partner channels.</li><li>Build a pipeline for AI solution adoption through product knowledge and value-proposition communication.</li></ul></article>
-      <article class="job"><h3>Co-Founder & Administrative Director — Franciseth Nigeria Limited</h3><div class="date">February 2022 – Present</div><ul><li>Deliver web applications and digital projects across e-commerce, WordPress and full-stack builds.</li><li>Collaborate with distributed teams and translate client requirements into practical technical delivery.</li></ul></article>
-      <article class="job"><h3>Technical Officer — Latonic Global Resources Limited</h3><div class="date">August 2017 – January 2022</div><ul><li>Translated requirements into wireframes, mockups and responsive front-end implementations.</li><li>Handled website maintenance, debugging, bug fixes and ongoing feature delivery.</li></ul></article>
-      <article class="job"><h3>Head of IT & Software Development — OSIL</h3><div class="date">2016 – 2017</div><ul><li>Architected and built OCORD.NET and led the software engineering lifecycle end-to-end.</li><li>Directed technical decisions, infrastructure planning and code-quality reviews for a small development team.</li></ul></article>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap contact">
-    <div><span class="eyebrow">Let’s connect</span><h2>Open to senior engineering, software development and technology opportunities.</h2></div>
-    <div class="contact-list">
-      <a href="mailto:francis.folayemi@gmail.com">francis.folayemi@gmail.com ↗</a>
-      <a href="tel:+2349068611799">+234 906 861 1799 ↗</a>
-      <a href="https://github.com/francisfolayemi-arch" target="_blank" rel="noopener">github.com/francisfolayemi-arch ↗</a>
-      <a href="https://linkedin.com/in/folayemi-adigun" target="_blank" rel="noopener">linkedin.com/in/folayemi-adigun ↗</a>
-    </div>
-  </div>
-</section>
+<section id="contact"><div class="wrap">
+  <h2>Let’s connect</h2><p class="section-intro">Open to senior engineering, software development and technology opportunities.</p>
+  <div class="actions"><a class="btn primary" href="mailto:francis.folayemi@gmail.com">francis.folayemi@gmail.com ↗</a><a class="btn secondary" href="https://linkedin.com/in/folayemi-adigun" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn secondary" href="https://github.com/francisfolayemi-arch" target="_blank" rel="noopener">GitHub ↗</a></div>
+</div></section>
 </main>
-
-<footer><div class="wrap"><span>© 2026 Adigun Francis Folayemi</span><span>Built with HTML & CSS · Hosted on GitHub Pages</span></div></footer>
-</body>
-</html>
+<footer><div class="wrap">© 2026 Adigun Francis Folayemi · Built with HTML & CSS · Hosted on GitHub Pages</div></footer>
+</body></html>
